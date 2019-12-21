@@ -1,6 +1,6 @@
-# Project Outline
+# Project Outline - Fullstack/Production
 
-Server API is running on Zeit NOW 
+Server API is running on Zeit NOW  
 Client is hosted on Azure
 
 [Demo](https://oauth.z19.web.core.windows.net/)
