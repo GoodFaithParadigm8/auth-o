@@ -10,6 +10,7 @@ const jwks = require('jwks-rsa');
 const dragonsJson = require('./dragons.json');
 const config = require('./config.js');
 
+
 //-- JWT check
 
 // @TODO: Remove .SAMPLE from /server/config.js.SAMPLE
@@ -32,9 +33,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use(jwtCheck);
+
 //--- GET protected dragons route
 app.get('/api/dragons', jwtCheck, function (req, res) {
   res.json(dragonsJson);
+});
+
+
+app.get('/authorized', function (req, res) {
+  res.send('Secured Resource');
 });
 
 //--- Port
