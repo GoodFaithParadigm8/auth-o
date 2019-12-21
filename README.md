@@ -1,3 +1,14 @@
+# Project Outline
+
+Server API is running on Zeit NOW 
+Client is hosted on Azure
+
+[Demo](https://oauth.z19.web.core.windows.net/)
+
+
+Authentification provided by AuthO
+
+
 # angular-auth0-aside
 
 This repository demonstrates the use of [Auth0](https://auth0.com) with [Angular](https://angular.io) (with the [@angular/cli](https://github.com/angular/angular-cli)) and a sample Node API with a protected route.
