@@ -1,4 +1,10 @@
-# Project Outline - Fullstack/Production
+# Documentation generated with CompoDoc
+
+Great for NestJs and Angular projects. Try [compodoc](https://compodoc.app/) on your projects.
+
+Explore [angular-auth0-aside](https://docs010oauth.z22.web.core.windows.net/) docs.
+
+## Project Outline - Fullstack/Production
 
 Server API is running on Zeit NOW  
 Client is hosted on Azure
