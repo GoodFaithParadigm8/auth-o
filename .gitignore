@@ -3,11 +3,11 @@
 /node_modules
 /server/node_modules
 /server/now.json
-environment.ts
-environment.prod.ts
+src/environmnets/environment.ts
+src/environmnets/environment.prod.ts
 config.js
 environments/*
-
+!*/now.json
 # compiled output
 /dist
 /tmp
