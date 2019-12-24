@@ -2,6 +2,7 @@
 
 /node_modules
 /server/node_modules
+/server/now.json
 environment.ts
 environment.prod.ts
 config.js
