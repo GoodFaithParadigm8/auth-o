@@ -3,7 +3,9 @@
 /node_modules
 /server/node_modules
 environment.ts
+environment.prod.ts
 config.js
+environments/*
 
 # compiled output
 /dist
