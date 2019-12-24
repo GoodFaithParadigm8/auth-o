@@ -19,16 +19,21 @@ export class AuthService {
   });
   // Track whether or not to renew token
   private authFlag = 'isLoggedIn';
+
   // Create stream for token
   token$ = new BehaviorSubject<string>(null);
+
   // Create stream for user profile data
   userProfile$ = new BehaviorSubject<any>(null);
+
   // Authentication navigation
   onAuthSuccessUrl = '/';
   onAuthFailureUrl = '/';
   logoutUrl = environment.auth.LOGOUT_URL;
+
   // Create observable of Auth0 parseHash method to gather auth results
   parseHash$ = bindNodeCallback(this.Auth0.parseHash.bind(this.Auth0));
+
   // Create observable of Auth0 checkSession method to
   // verify authorization server session and renew tokens
   checkSession$ = bindNodeCallback(this.Auth0.checkSession.bind(this.Auth0));
@@ -36,6 +41,7 @@ export class AuthService {
   constructor(private router: Router) { }
 
   login() {
+    localStorage.clear()
     this.Auth0.authorize();
   }
 

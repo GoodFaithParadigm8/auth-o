@@ -1,0 +1,162 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-auth0-aside documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular-auth0-aside documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="project-outline">Project Outline</h1>
+<p>Server API is running on Zeit NOW 
+Client is hosted on Azure</p>
+<p><a href="https://oauth.z19.web.core.windows.net/">Demo</a></p>
+<p>Authentification provided by AuthO</p>
+<h1 id="angular-auth0-aside">angular-auth0-aside</h1>
+<p>This repository demonstrates the use of <a href="https://auth0.com">Auth0</a> with <a href="https://angular.io">Angular</a> (with the <a href="https://github.com/angular/angular-cli">@angular/cli</a>) and a sample Node API with a protected route.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="http://nodejs.org">Node.js with npm</a>, Node &gt;= 8, npm &gt;= 5</li>
+<li><a href="https://github.com/angular/angular-cli">@angular/cli</a>, &gt;= 8</li>
+</ul>
+<h2 id="auth0-application-setup">Auth0 Application Setup</h2>
+<ol>
+<li>Go to your <a href="https://manage.auth0.com/#/applications"><strong>Auth0 Dashboard: Applications</strong></a> section and click the &quot;<a href="https://manage.auth0.com/#/applications/create">+ Create Application</a>&quot; button.</li>
+<li>Name your new app and select &quot;Single Page Web Applications&quot;.</li>
+<li>In the <strong>Settings</strong> for your new Auth0 app, add <code>http://localhost:4200/callback</code> to the <strong>Allowed Callback URLs</strong>.</li>
+<li>Add <code>http://localhost:4200</code> to both the <strong>Allowed Web Origins</strong> and <strong>Allowed Logout URLs</strong>. Click the &quot;Save Changes&quot; button.</li>
+<li>If you&#39;d like, you can <a href="https://manage.auth0.com/#/connections/social">set up some social connections</a>. You can then enable them for your app in the <strong>Application</strong> options under the <strong>Connections</strong> tab. The example shown in the screenshot above uses username/password database, Facebook, Google, and Twitter.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Set up your own social keys and <em>do not</em> leave social connections set to use Auth0 dev keys or you will encounter issues with token renewal.</p>
+</blockquote>
+<h2 id="auth0-api-setup">Auth0 API Setup</h2>
+<ol>
+<li>Go to <a href="https://manage.auth0.com/#/apis"><strong>APIs</strong></a> in your Auth0 dashboard and click on the &quot;Create API&quot; button. Enter a name for the API. Set the <strong>Identifier</strong> to your API endpoint URL. In this example, this is <code>http://localhost:3001/api/</code>. The <strong>Signing Algorithm</strong> should be <code>RS256</code>.</li>
+<li>You can consult the Node.js example under the <strong>Quick Start</strong> tab in your new API&#39;s settings. We&#39;ll implement our Node API in this fashion, using <a href="https://expressjs.com/">Express</a>, <a href="https://github.com/auth0/express-jwt">express-jwt</a>, and <a href="https://github.com/auth0/node-jwks-rsa">jwks-rsa</a>.</li>
+</ol>
+<p>We&#39;re now ready to implement Auth0 authentication on both our Angular client and Node backend API.</p>
+<h2 id="installation">Installation</h2>
+<p>Clone this project. From the root directory, run the following commands to install dependencies for the server and client-side:</p>
+<div><pre class="line-numbers"><code class="language-none">$ npm install
+$ cd server
+$ npm install</code></pre></div><ol>
+<li>Open <code>server/config.js.example</code> and remove <code>.example</code> from the file name. Then replace <code>[YOUR_AUTH0_DOMAIN]</code> with your Auth0 domain.</li>
+<li>Open <code>src/app/environments/environment.example</code> and remove <code>.example</code> from the file name. Then replace <code>[YOUR_CLIENT_ID]</code> and <code>[YOUR_AUTH0_DOMAIN]</code> with your Auth0 application&#39;s client ID and domain.</li>
+</ol>
+<h2 id="serving-the-project">Serving the project</h2>
+<p>From the root of this project, run:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm start</code></pre></div><p>This will concurrently serve the Angular and API servers.</p>
+<h2 id="what-is-auth0">What is Auth0?</h2>
+<p>Auth0 helps you to:</p>
+<ul>
+<li>Add authentication with <a href="https://docs.auth0.com/identityproviders">multiple authentication sources</a>, either social like <strong>Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others</strong>, or enterprise identity systems like <strong>Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider</strong>.</li>
+<li>Add authentication through more traditional <strong><a href="https://docs.auth0.com/mysql-connection-tutorial">username/password databases</a></strong>.</li>
+<li>Add support for <strong><a href="https://docs.auth0.com/link-accounts">linking different user accounts</a></strong> with the same user.</li>
+<li>Support for generating signed <a href="https://docs.auth0.com/jwt">Json Web Tokens</a> to call your APIs and <strong>flow the user identity</strong> securely.</li>
+<li>Analytics of how, when and where users are logging in.</li>
+<li>Pull data from other sources and add it to the user profile, through <a href="https://docs.auth0.com/rules">JavaScript rules</a>.</li>
+</ul>
+<h2 id="create-a-free-auth0-account">Create a Free Auth0 Account</h2>
+<ol>
+<li>Go to <a href="https://auth0.com">Auth0</a> and click Sign Up.</li>
+<li>Use Google, GitHub, or Microsoft Account to log in.</li>
+</ol>
+<h2 id="issue-reporting">Issue Reporting</h2>
+<p>If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The <a href="https://auth0.com/whitehat">Responsible Disclosure Program</a> details the procedure for disclosing security issues.</p>
+<h2 id="author">Author</h2>
+<p><a href="auth0.com">Auth0</a></p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT license. See the <a href="LICENSE">LICENSE</a> file for more info.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
