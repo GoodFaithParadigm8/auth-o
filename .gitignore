@@ -1,19 +1,18 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 /node_modules
-/server/node_modules
-/server/now.json
-src/environmnets/environment.ts
-src/environmnets/environment.prod.ts
+server/node_modules
+server/now.json
 config.js
-environments/*
+environment.ts
+environment.prod.ts
 */now.json
-/server/.env
+server/.env
 # compiled output
 /dist
 /tmp
 /out-tsc
-.env
+
 
 # dependencies
 /node_modules
