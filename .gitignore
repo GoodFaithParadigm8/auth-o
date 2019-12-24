@@ -7,11 +7,13 @@ src/environmnets/environment.ts
 src/environmnets/environment.prod.ts
 config.js
 environments/*
-!*/now.json
+*/now.json
+/server/.env
 # compiled output
 /dist
 /tmp
 /out-tsc
+.env
 
 # dependencies
 /node_modules

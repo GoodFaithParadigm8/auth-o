@@ -33,7 +33,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use(jwtCheck);
 
 //--- GET protected dragons route
 app.get('/api/dragons', jwtCheck, function (req, res) {
@@ -41,7 +40,7 @@ app.get('/api/dragons', jwtCheck, function (req, res) {
 });
 
 
-app.get('/authorized', function (req, res) {
+app.get('/authorized', jwtCheck, function (req, res) {
   res.send('Secured Resource');
 });
 
